@@ -15,3 +15,7 @@ def helloWorld():
 @app.route("/felix")
 def methodefelix():
   return felix.methodevanfelix()
+
+@app.route("/felix2")
+def methodefelix2():
+  return felix.tweedemethodevanfelix()
