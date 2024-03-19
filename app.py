@@ -19,3 +19,7 @@ def methodefelix():
 @app.route("/felix2")
 def methodefelix2():
   return felix.tweedemethodevanfelix()
+
+@app.route("/felix3/<variabele1>")
+def methodefelix3(variabele1):
+  return felix.derdemethodevanfelix(variabele1)
