@@ -6,6 +6,7 @@ from flask_cors import CORS
 import erik
 import felix
 import dominique
+import recept
 
 app = Flask(__name__)
 CORS(app)
@@ -33,3 +34,15 @@ def methodedominique():
 @app.route("/erik1/<eenword>/<tweeword>")
 def methodeerik(eenword, tweeword):
   return erik.methodeerik(eenword, tweeword)
+
+@app.route("/recept")
+def methoderecept():
+  return recept.allesSelecterenMethode()
+
+@app.route("/recept2")
+def methoderecept2():
+  return recept.tweedeAllesSelecterenMethode()
+
+
+
+
