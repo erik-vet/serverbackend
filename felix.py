@@ -34,6 +34,7 @@ def derdemethodevanfelix(eenwoord):
         database="demopythondag"
     )
 
+
     mycursor = mydb.cursor()
     sql = "INSERT INTO ober (voornaam, achternaam) VALUES (%s, %s)"
     val = (eenwoord, 'jansen')
@@ -48,3 +49,4 @@ def derdemethodevanfelix(eenwoord):
 
 
 # print(derdemethodevanfelix('piet'))
+

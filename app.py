@@ -3,8 +3,10 @@
 from flask import Flask
 from flask_cors import CORS
 
+import erik
 import felix
 import dominique
+import recept
 
 app = Flask(__name__)
 CORS(app)
@@ -28,3 +30,19 @@ def methodefelix3(variabele1):
 @app.route("/dominique")
 def methodedominique():
     return dominique.open_youtube_link('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+
+@app.route("/erik1/<eenword>/<tweeword>")
+def methodeerik(eenword, tweeword):
+  return erik.methodeerik(eenword, tweeword)
+
+@app.route("/recept")
+def methoderecept():
+  return recept.allesSelecterenMethode()
+
+@app.route("/recept2")
+def methoderecept2():
+  return recept.tweedeAllesSelecterenMethode()
+
+
+
+
