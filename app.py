@@ -2,6 +2,9 @@
 # pip install flask-cors
 from flask import Flask
 from flask_cors import CORS
+import json
+import requests
+from flask import request
 
 import erik
 import felix
@@ -43,6 +46,14 @@ def methoderecept():
 def methoderecept2():
   return recept.tweedeAllesSelecterenMethode()
 
+@app.route("/felixjson")
+def felixjson():
+  return felix.nuechtmetjson()
 
+@app.route("/felixpost", methods=['POST'])
+def felixpost():
+  data_json = json.loads(request.data.decode('utf-8'))
+  print(data_json["naam"])
+  return "hoi"
 
 
