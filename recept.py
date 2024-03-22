@@ -22,3 +22,4 @@ def tweedeAllesSelecterenMethode():
         print(x[1], " - ", x[3])
         eindstring += x[1]+", "
     return "yes: " + eindstring
+print(tweedeAllesSelecterenMethode())
