@@ -26,5 +26,27 @@ def tweedemethodevanfelix():
 
     
 
+def derdemethodevanfelix(eenwoord):
+    mydb = mysql.connector.connect(
+        host="yc2403allpurpose.mysql.database.azure.com",  #port erbij indien mac
+        user="yc2403admin",
+        password="abcd1234ABCD!@#$",
+        database="demopythondag"
+    )
 
-#print(tweedemethodevanfelix())
+
+    mycursor = mydb.cursor()
+    sql = "INSERT INTO ober (voornaam, achternaam) VALUES (%s, %s)"
+    val = (eenwoord, 'jansen')
+    mycursor.execute(sql, val)
+
+    mydb.commit()
+
+    print(mycursor.rowcount, "record inserted.")
+    return "gelukt"
+
+
+
+
+# print(derdemethodevanfelix('piet'))
+
